@@ -1,0 +1,24 @@
+CREATE table grocery (id integer primary key, Item text, price integer, aisle integer, qty integer);
+
+INSERT into grocery VALUES
+(1,"Bananas",1,1,100),
+(2,"Apples",2,1,75),
+(3,"Oranges",4,1,60),
+(4,"Bread",6,2,100),
+(5,"Turkey",8,4,20),
+(6,"Chicken",5,5,15),
+(7,"Soup",1,7,100),
+(8,"Pizza",12,11,20),
+(9,"Chicken Nuggets",12,11,30),
+(10,"Apple Juice",4,3,25),
+(11,"Beer",17,12,50),
+(12,"Wine",19,12,125),
+(13,"Milk",4,3,75),
+(14,"Cheese",5,4,35),
+(15,"Cupcakes",10,2,10);
+
+Select Item, aisle, sum(qty)
+FROM grocery
+WHERE aisle >= 6
+GROUP BY aisle
+ORDER By aisle asc;
